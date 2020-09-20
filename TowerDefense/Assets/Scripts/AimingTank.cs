@@ -74,7 +74,7 @@ public class AimingTank : MonoBehaviour
 		Vector3 rotation = Quaternion.Lerp(PartToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
 		Vector3 rotationUpDown = Quaternion.Slerp(PartToRotateUpDown.rotation, lookRotation1, Time.deltaTime * turnSpeed).eulerAngles;
 		PartToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-		//PartToRotateUpDown.rotation = Quaternion.Euler(rotationUpDown.x, rotation.y, 0f);
+		PartToRotateUpDown.rotation = Quaternion.Euler(rotationUpDown.x, rotation.y, 0f);
 	}
 
 }
