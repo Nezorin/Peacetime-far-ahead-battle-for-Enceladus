@@ -6,7 +6,42 @@ ModelImporter:
   - first:
       74: -623603649343465320
     second: Scene
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black metal
+    second: {fileID: 2100000, guid: bed2ec49aec2d474aba830dfa0c52d3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gray metal
+    second: {fileID: 2100000, guid: ced4dc349732e404080089629de659d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orange light
+    second: {fileID: 2100000, guid: 66fa65a5aaa6cc642b6b5f8fb7ac8a52, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red light
+    second: {fileID: 2100000, guid: 7493a6a2fd0b4574d89480c8b9784841, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Texture
+    second: {fileID: 2100000, guid: 413f0243e1dfa7b4ab68e880fd975692, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Track
+    second: {fileID: 2100000, guid: 7f4644bd89445c84a9373e637d680a34, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White light
+    second: {fileID: 2100000, guid: fde2e0d6129c42f4da1710f20a2664bf, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

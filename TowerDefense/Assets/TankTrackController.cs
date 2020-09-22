@@ -308,6 +308,7 @@ public class TankTrackController : MonoBehaviour
 		}
 		else if (accel == 0.0f)
 		{
+			Debug.Log("hello");
 			col.brakeTorque = rotateOnStandBrakeTorque;
 			col.motorTorque = steer * rotateOnStandTorque;
 			fc.stiffness = 1.0f + minOnStayStiffness - Mathf.Abs(steer);
