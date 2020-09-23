@@ -26,19 +26,19 @@ public class CameraMovement : MonoBehaviour
                 return;
             transform.position += Camera.main.transform.forward * -1 * scrollSpeed;
         }
-        if (Input.GetKey("w"))
+        if (Input.GetKey("i"))
         {
             transform.position += Camera.main.transform.up * moveSpeed;
         }
-        if (Input.GetKey("s"))
+        if (Input.GetKey("k"))
         {
             transform.position += Camera.main.transform.up * -1 * moveSpeed;
         }
-        if (Input.GetKey("d"))
+        if (Input.GetKey("l"))
         {
             transform.position += Camera.main.transform.right * moveSpeed;
         }
-        if (Input.GetKey("a"))
+        if (Input.GetKey("j"))
         {
             transform.position += Camera.main.transform.right * -1 * moveSpeed;
         }
