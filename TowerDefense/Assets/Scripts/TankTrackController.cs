@@ -22,6 +22,8 @@ public class TankTrackController : MonoBehaviour
 	public Transform[] rightTrackWheels; //8
 	public Transform[] rightTrackBones; //9
 
+	public static bool IsMoving = false;
+
 	public class WheelData
 	{ //10
 		public Transform wheelTransform; //11
@@ -286,10 +288,11 @@ public class TankTrackController : MonoBehaviour
 		if (accel == 0 && steer == 0)
 		{
 			col.brakeTorque = maxBrakeTorque;
+			IsMoving = false;
 		}
 		else if (accel == 0.0f)
 		{
-			Debug.Log("hello");
+			IsMoving = true;
 			col.brakeTorque = rotateOnStandBrakeTorque;
 			col.motorTorque = steer * rotateOnStandTorque;
 			fc.stiffness = 1.0f + minOnStayStiffness - Mathf.Abs(steer);
@@ -297,7 +300,7 @@ public class TankTrackController : MonoBehaviour
 		}
 		else
 		{ //8 
-
+			IsMoving = true;
 			col.brakeTorque = minBrakeTorque;  //9 
 			col.motorTorque = accel * forwardTorque;  //10 
 

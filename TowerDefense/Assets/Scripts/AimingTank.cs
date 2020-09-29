@@ -63,16 +63,17 @@ public class AimingTank : MonoBehaviour
 
 	void LockOnTarget()
 	{
+		if (TankTrackController.IsMoving)
+		{
+			return;
+		}
 		//Debug.Log("x: " + Compensator.position.x.ToString() + "  y: " + Compensator.position.y.ToString() + "  z:  " + Compensator.position.z.ToString());
 		Vector3 dir = new Vector3(target.position.x - transform.position.x, target.position.y - transform.position.y, target.position.z - transform.position.z);
 		Vector3 dir1 = new Vector3(target.position.x - Compensator.GetComponent<Renderer>().bounds.center.x, target.position.y - Compensator.GetComponent<Renderer>().bounds.center.y, target.position.z - Compensator.GetComponent<Renderer>().bounds.center.z);
-		dir = new Vector3(-dir.x, -dir.y, -dir.z);
-		dir1 = new Vector3(-dir1.x, -dir1.y, -dir1.z);
-
 		Quaternion lookRotation = Quaternion.LookRotation(dir);
 		Quaternion lookRotation1 = Quaternion.LookRotation(dir1);
 		Vector3 rotation = Quaternion.Lerp(PartToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-		Vector3 rotationUpDown = Quaternion.Slerp(PartToRotateUpDown.rotation, lookRotation1, Time.deltaTime * turnSpeed).eulerAngles;
+		Vector3 rotationUpDown = Quaternion.Lerp(PartToRotateUpDown.rotation, lookRotation1, Time.deltaTime * turnSpeed).eulerAngles;
 		PartToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 		PartToRotateUpDown.rotation = Quaternion.Euler(rotationUpDown.x, rotation.y, 0f);
 	}
