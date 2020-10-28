@@ -8,7 +8,7 @@ public class Turret : MonoBehaviour
 	public Transform PartToRotate;
 	public Transform PartToRotateUpDown;
 	public Transform Compensator;
-
+	public string name = "lel";
 	public string enemyTag = "Enemy";
 	public float range = 15f;
 	private float turnSpeed = 10f;
