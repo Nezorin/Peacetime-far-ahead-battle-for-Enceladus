@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/TurretEnemyScene.unity
+    guid: a55d388d322deb840a6c7ccc0f1a0e28
   m_configObjects: {}
