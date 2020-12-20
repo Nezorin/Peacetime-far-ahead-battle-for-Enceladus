@@ -1989,7 +1989,6 @@ MonoBehaviour:
   - {fileID: 374151483036848573}
   - {fileID: 8193593571872848022}
   - {fileID: 8460993894163405551}
-  - {fileID: 8215311617035941570, guid: e113ceaa98ae1144091550337517cce0, type: 3}
   rightTrackBones:
   - {fileID: 5676346013587386721}
   - {fileID: 3454877529636662286}
@@ -2017,11 +2016,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  targetObject: {fileID: 0}
   PartToRotate: {fileID: 2797482909798010675}
   PartToRotateUpDown: {fileID: 2797482909244618221}
   Compensator: {fileID: 3672700506973127661}
   enemyTag: Defense
   range: 50
+  fireRate: 1
+  fireCountdown: 0
+  damage: 5
 --- !u!114 &9002555297145666881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2035,6 +2038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
+  curHealth: 0
 --- !u!1 &6217065009458216586
 GameObject:
   m_ObjectHideFlags: 0

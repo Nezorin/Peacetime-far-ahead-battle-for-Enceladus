@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic; //1
 
 public class TankTrackController : MonoBehaviour
@@ -207,6 +206,7 @@ public class TankTrackController : MonoBehaviour
 
 		accelerate = -Input.GetAxis("Vertical");  //4
 		steer = -Input.GetAxis("Horizontal"); //4
+		Debug.Log("2345");
 
 		UpdateWheels(accelerate, steer); //5 
 	}
@@ -259,20 +259,6 @@ public class TankTrackController : MonoBehaviour
 			rightTrackUpperWheels[i].localRotation = Quaternion.Euler(rightTrackWheelData[0].rotation, rightTrackWheelData[0].startWheelAngle.y, rightTrackWheelData[0].startWheelAngle.z);
 		}
 	}
-
-
-	/*public void CalculateMotorForce(WheelCollider col, float accel, float steer)
-	{  //6
-		if (accel == 0 && steer == 0)
-		{ //7
-			col.brakeTorque = maxBrakeTorque; //7
-		}
-		else if (accel == 0.0f)
-		{  //8
-			col.brakeTorque = rotateOnStandBrakeTorque; //9
-			col.motorTorque = steer * rotateOnStandTorque; //10
-		}
-	}*/
 
 	public float forwardTorque = 500.0f; //1
 	public float rotateOnMoveBrakeTorque = 400.0f; //2 
