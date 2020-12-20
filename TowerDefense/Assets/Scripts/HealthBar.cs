@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     // Start is called before the first frame update
+    public bool RotateHealthBar = true;
     public Slider sld;
     void Start()
     {
@@ -19,7 +20,10 @@ public class HealthBar : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (RotateHealthBar)
+        {
         transform.LookAt(Camera.current.transform);
+        }
         //transform.Rotate(0, 180, 0);
     }
 }

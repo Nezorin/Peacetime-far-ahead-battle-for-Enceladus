@@ -5,13 +5,19 @@ using UnityEngine;
 public class AimingTank : MonoBehaviour
 {
 	public Transform target;
+	public GameObject targetObject;
 	public Transform PartToRotate;
 	public Transform PartToRotateUpDown;
 	public Transform Compensator;
 
 	public string enemyTag = "Defense";
-	public float range = 15f;
 	private float turnSpeed = 10f;
+
+	[Header("Attributes")]
+	public float range = 15f;
+	public float fireRate = 1f;
+	public float fireCountdown = 0f;
+	public float damage = 5f;
 
 	private void OnDrawGizmosSelected()
 	{
@@ -43,10 +49,12 @@ public class AimingTank : MonoBehaviour
 		if (nearestEnemy != null && shortestDistance <= range)
 		{
 			target = nearestEnemy.transform;
+			targetObject = nearestEnemy;
 		}
 		else
 		{
 			target = null;
+			targetObject = null;
 		}
 
 	}
@@ -59,6 +67,16 @@ public class AimingTank : MonoBehaviour
 			return;
 		}
 		LockOnTarget();
+		if (fireCountdown <= 0f)
+		{
+			Shoot();
+			fireCountdown = 1f / fireRate;
+		}
+		fireCountdown -= Time.deltaTime;
+	}
+	private void Shoot()
+	{
+		targetObject.GetComponent<Health>().ModifyHealth(-damage);
 	}
 
 	void LockOnTarget()

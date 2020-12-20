@@ -12,6 +12,7 @@ public class Turret : MonoBehaviour
 	public Transform Compensator;
 	public string name = "lel";
 	public string enemyTag = "Enemy";
+
 	[Header("Attributes")]
 	public float range = 15f;
 	private float turnSpeed = 10f;
@@ -77,7 +78,6 @@ public class Turret : MonoBehaviour
 
 	private void Shoot()
 	{
-		Debug.Log("огонь!");
 		targetObject.GetComponent<Health>().ModifyHealth(-damage);
 	}
 
