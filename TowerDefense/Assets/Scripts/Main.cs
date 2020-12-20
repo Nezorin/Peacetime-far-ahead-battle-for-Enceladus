@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Main : MonoBehaviour
 {
+    public Camera MainCamera;
+    public Camera StaticBuildCamera;
     public Turret[] turarray;
     public Color highlightColor;
     public Color defaultColor;
@@ -19,6 +21,8 @@ public class Main : MonoBehaviour
     public static GameObject turret_to_plant;
     void Start()
     {
+        MainCamera.enabled = true;
+        StaticBuildCamera.enabled = false;
         turarray = Resources.LoadAll<Turret>("Defences");
         can = Instantiate(canvasprefab);
         buildbutton = Instantiate(buildbprefab);
@@ -34,7 +38,8 @@ public class Main : MonoBehaviour
 
     public void BuildMode()
     {
-        //Smena Kamery na vid verh
+        MainCamera.enabled = false;
+        StaticBuildCamera.enabled = true;
         build_mode = true;
         Destroy(buildbutton.gameObject);
         CreateDefenceButtons();
