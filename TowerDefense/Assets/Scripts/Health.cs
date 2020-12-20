@@ -20,5 +20,13 @@ public class Health : MonoBehaviour
         pc = curHealth / MaxHealth;
         OnHealthPercChanged(pc);
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown("space"))
+        {
+            ModifyHealth(-10);
+        }
+    }
 }
 
