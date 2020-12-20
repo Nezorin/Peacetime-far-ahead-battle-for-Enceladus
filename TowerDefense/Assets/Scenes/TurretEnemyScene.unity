@@ -918,10 +918,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1324281975585216646, guid: 0e75082908844ab4fbbf0d5a78dc3365,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1560993217138980649, guid: 0e75082908844ab4fbbf0d5a78dc3365,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3296636084275745189, guid: 0e75082908844ab4fbbf0d5a78dc3365,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3296636084275745189, guid: 0e75082908844ab4fbbf0d5a78dc3365,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5339621516304167916, guid: 0e75082908844ab4fbbf0d5a78dc3365,
         type: 3}
       propertyPath: m_Name
       value: GaussGun_Texture (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5473673009160251699, guid: 0e75082908844ab4fbbf0d5a78dc3365,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5473673009160251699, guid: 0e75082908844ab4fbbf0d5a78dc3365,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5875841655011694618, guid: 0e75082908844ab4fbbf0d5a78dc3365,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5875841655011694618, guid: 0e75082908844ab4fbbf0d5a78dc3365,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8953574571257184767, guid: 0e75082908844ab4fbbf0d5a78dc3365,
         type: 3}
@@ -1920,10 +1960,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1324281975585216646, guid: 0e75082908844ab4fbbf0d5a78dc3365,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493932375206367363, guid: 0e75082908844ab4fbbf0d5a78dc3365,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 2089002343}
+    - target: {fileID: 3296636084275745189, guid: 0e75082908844ab4fbbf0d5a78dc3365,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3296636084275745189, guid: 0e75082908844ab4fbbf0d5a78dc3365,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5339621516304167916, guid: 0e75082908844ab4fbbf0d5a78dc3365,
         type: 3}
       propertyPath: m_Name
       value: GaussGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 5473673009160251699, guid: 0e75082908844ab4fbbf0d5a78dc3365,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5473673009160251699, guid: 0e75082908844ab4fbbf0d5a78dc3365,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5875841655011694618, guid: 0e75082908844ab4fbbf0d5a78dc3365,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5875841655011694618, guid: 0e75082908844ab4fbbf0d5a78dc3365,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8953574571257184767, guid: 0e75082908844ab4fbbf0d5a78dc3365,
         type: 3}
