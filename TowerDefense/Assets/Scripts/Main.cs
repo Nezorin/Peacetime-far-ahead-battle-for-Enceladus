@@ -6,14 +6,15 @@ using UnityEngine.UI;
 public class Main : MonoBehaviour
 {
     public Turret[] turarray;
-    public bool build_mode = false;
+    public static bool build_mode = false;
+    public static string turname;
     public GameObject buildbprefab;
     public GameObject defencebprefab;
     List<GameObject> defencebuttons = new List<GameObject>();
     public GameObject buildbutton;
     public Canvas canvasprefab;
     public Canvas can;
-    GameObject turret_to_plant;
+    public static GameObject turret_to_plant;
     void Start()
     {
         turarray = Resources.LoadAll<Turret>("Defences");
@@ -45,13 +46,22 @@ public class Main : MonoBehaviour
             defencebuttons[defencebuttons.Count - 1].transform.SetParent(can.transform, false);
             defencebuttons[defencebuttons.Count - 1].transform.position += new Vector3(0, 20 * defencebuttons.Count, 0);
             defencebuttons[defencebuttons.Count - 1].GetComponent<Button>().GetComponentInChildren<Text>().text = t.name;
-            defencebuttons[defencebuttons.Count - 1].GetComponent<Button>().onClick.AddListener(delegate { PlantTurret(defencebuttons[defencebuttons.Count - 1]); });
+            defencebuttons[defencebuttons.Count - 1].GetComponent<Button>().onClick.AddListener(delegate { SelectTurret(defencebuttons[defencebuttons.Count - 1]); });
         }
     }
 
-    void PlantTurret(GameObject b)
+    void SelectTurret(GameObject b)
     {
-        turret_to_plant = (GameObject)Resources.Load("Defences" + "/" + b.GetComponent<Button>().GetComponentInChildren<Text>().text);
-        Debug.Log("YEY");
+        turname = b.GetComponent<Button>().GetComponentInChildren<Text>().text;
+    }
+
+    public static void PlantTurret(Transform platform)
+    {
+        if (turname != null) {
+            turret_to_plant = (GameObject)Resources.Load("Defences" + "/" + turname);
+            GameObject t = Instantiate(turret_to_plant, platform);
+            t.transform.localScale = new Vector3(1.0f/7.0f, 5, 1.0f/7.0f);
+            Debug.Log("YEY"); 
+        }
     }
 }
