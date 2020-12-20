@@ -1,17 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
 	public Transform target;
+	public GameObject targetObject;
 	public Transform PartToRotate;
 	public Transform PartToRotateUpDown;
 	public Transform Compensator;
 	public string name = "lel";
 	public string enemyTag = "Enemy";
+	[Header("Attributes")]
 	public float range = 15f;
 	private float turnSpeed = 10f;
+	public float fireRate = 1f;
+	public float fireCountdown = 0f;
+	public float damage = 5f;
 
 	private void OnDrawGizmosSelected()
 	{
@@ -43,10 +49,12 @@ public class Turret : MonoBehaviour
 		if (nearestEnemy != null && shortestDistance <= range)
 		{
 			target = nearestEnemy.transform;
+			targetObject = nearestEnemy;
 		}
 		else
 		{
 			target = null;
+			targetObject = null;
 		}
 
 	}
@@ -59,6 +67,18 @@ public class Turret : MonoBehaviour
 			return;
 		}
 		LockOnTarget();
+		if (fireCountdown <= 0f)
+		{
+			Shoot();
+			fireCountdown = 1f / fireRate;
+		}
+			fireCountdown -= Time.deltaTime;
+	}
+
+	private void Shoot()
+	{
+		Debug.Log("огонь!");
+		targetObject.GetComponent<Health>().ModifyHealth(-damage);
 	}
 
 	void LockOnTarget()

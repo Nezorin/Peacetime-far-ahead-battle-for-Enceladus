@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
 {
     // Start is called before the first frame update
     public float MaxHealth = 100;
-    float curHealth;
+    public float curHealth;
     float pc;
     public event Action<float> OnHealthPercChanged = delegate { };
     private void Awake()
@@ -15,10 +15,15 @@ public class Health : MonoBehaviour
         curHealth = MaxHealth;
     }
 
-    public void ModifyHealth(float amount){
+    public void ModifyHealth(float amount)
+    {
         curHealth += amount;
         pc = curHealth / MaxHealth;
         OnHealthPercChanged(pc);
+        if (curHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Update()
