@@ -73,10 +73,4 @@ public class Turret : MonoBehaviour
 		PartToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 		PartToRotateUpDown.rotation = Quaternion.Euler(rotationUpDown.x, rotation.y, 0f);
 	}
-
-
-
-
-
-
 }
