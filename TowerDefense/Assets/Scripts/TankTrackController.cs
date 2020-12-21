@@ -201,12 +201,12 @@ public class TankTrackController : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		float accelerate = 0;
+		float accelerate = -1;
 		float steer = 0;
 
-		accelerate = -Input.GetAxis("Vertical");  //4
-		steer = -Input.GetAxis("Horizontal"); //4
-		Debug.Log("2345");
+		//accelerate = -Input.GetAxis("Vertical");  //4
+		//steer = -Input.GetAxis("Horizontal"); //4
+
 
 		UpdateWheels(accelerate, steer); //5 
 	}
