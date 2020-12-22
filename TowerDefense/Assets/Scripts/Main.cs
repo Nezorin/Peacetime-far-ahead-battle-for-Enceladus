@@ -13,9 +13,11 @@ public class Main : MonoBehaviour
     public static bool build_mode = false;
     public static string turname;
     public GameObject buildbprefab;
+    public GameObject Backprefab;
     public GameObject defencebprefab;
     static List<GameObject> defencebuttons = new List<GameObject>();
     GameObject buildbutton;
+    GameObject BackButton;
     public Canvas canvasprefab;
     public Canvas can;
     public static GameObject turret_to_plant;
@@ -41,8 +43,19 @@ public class Main : MonoBehaviour
         MainCamera.enabled = false;
         StaticBuildCamera.enabled = true;
         build_mode = true;
+        BackButton = Instantiate(Backprefab);
+        BackButton.transform.SetParent(can.transform, false);
         Destroy(buildbutton.gameObject);
         CreateDefenceButtons();
+        BackButton.GetComponent<Button>().onClick.AddListener(delegate { Destroy(BackButton);
+            MainCamera.enabled = true;
+            StaticBuildCamera.enabled = false;
+            build_mode = false;
+            DeleteDefenceButtons();
+            buildbutton = Instantiate(buildbprefab);
+            buildbutton.transform.SetParent(can.transform, false);
+            buildbutton.GetComponent<Button>().onClick.AddListener(delegate { BuildMode(); });
+        });
     }
 
     void CreateDefenceButtons()
@@ -56,6 +69,14 @@ public class Main : MonoBehaviour
             defencebuttons[defencebuttons.Count - 1].GetComponent<Button>().onClick.AddListener(delegate { SelectTurret(defencebuttons[defencebuttons.Count - 1]); });
         }
         //ResetToDefaultColors();
+    }
+    void DeleteDefenceButtons()
+    {
+        foreach (var t in defencebuttons)
+        {
+            Destroy(t);
+        }
+        defencebuttons.Clear();
     }
 
     void SelectTurret(GameObject b)
