@@ -1991,6 +1991,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 682f271a98038c04f9bc2785cd30228e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Fortress: {fileID: 770268361104959987, guid: aa51809ae95089944b260799dfa7c54e, type: 3}
+  Tank: {fileID: 6193376325204058688}
   wheelCollider: {fileID: 937367263883999446, guid: 5eb620a486c41e74982d6bf1bed0782d,
     type: 3}
   wheelRadius: 0.85
@@ -2053,7 +2055,7 @@ MonoBehaviour:
   bulletPlace: {fileID: 2526068447405736641}
   bulletprefab: {fileID: 136330, guid: 9a0c3383523899643a8d0661cfaca4e4, type: 3}
   enemyTag: Defense
-  range: 50
+  range: 100
   fireRate: 1
   fireCountdown: 0
   damage: 5

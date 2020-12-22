@@ -3,7 +3,8 @@ using System.Collections.Generic; //1
 
 public class TankTrackController : MonoBehaviour
 {
-
+	public GameObject Fortress; 
+	public GameObject Tank; 
 	public GameObject wheelCollider; //2
 
 	public float wheelRadius = 0.15f; //3
@@ -201,7 +202,7 @@ public class TankTrackController : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		float accelerate = -1;
+		float accelerate = Vector3.Distance(Tank.transform.position, Fortress.transform.position) <= 180 ? 0 : -1;
 		float steer = 0;
 
 		//accelerate = -Input.GetAxis("Vertical");  //4

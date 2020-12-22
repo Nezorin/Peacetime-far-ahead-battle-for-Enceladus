@@ -1920,10 +1920,10 @@ MonoBehaviour:
   enemyTag: Enemy
   shootingLeftRight: {fileID: 9122349863039773585}
   bulletprefab: {fileID: 136330, guid: 9a0c3383523899643a8d0661cfaca4e4, type: 3}
-  range: 15
+  range: 150
   fireRate: 1
   fireCountdown: 0
-  damage: 5
+  damage: 50
 --- !u!114 &-865596031991987558
 MonoBehaviour:
   m_ObjectHideFlags: 0
