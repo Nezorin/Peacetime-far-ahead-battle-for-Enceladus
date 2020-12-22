@@ -12,6 +12,8 @@ public class Turret : MonoBehaviour
 	public Transform Compensator;
 	public string name = "lel";
 	public string enemyTag = "Enemy";
+	public Transform shootingLeftRight;
+	public GameObject bulletprefab;
 
 	[Header("Attributes")]
 	public float range = 15f;
@@ -78,7 +80,11 @@ public class Turret : MonoBehaviour
 
 	private void Shoot()
 	{
+
 		targetObject.GetComponent<Health>().ModifyHealth(-damage);
+		Quaternion q = Quaternion.Euler(PartToRotateUpDown.position.x, Compensator.position.y, Compensator.position.z);
+		GameObject go = GameObject.Instantiate(bulletprefab, shootingLeftRight.position, Compensator.rotation*Quaternion.Euler(80,0,0)) as GameObject;
+		Destroy(go, 1.5f);
 	}
 
 	void LockOnTarget()

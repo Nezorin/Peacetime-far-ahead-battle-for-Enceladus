@@ -9,6 +9,8 @@ public class AimingTank : MonoBehaviour
 	public Transform PartToRotate;
 	public Transform PartToRotateUpDown;
 	public Transform Compensator;
+	public Transform bulletPlace;
+	public GameObject bulletprefab;
 
 	public string enemyTag = "Defense";
 	private float turnSpeed = 10f;
@@ -77,6 +79,8 @@ public class AimingTank : MonoBehaviour
 	private void Shoot()
 	{
 		targetObject.GetComponent<Health>().ModifyHealth(-damage);
+		GameObject go = GameObject.Instantiate(bulletprefab, bulletPlace.position, Compensator.rotation * Quaternion.Euler(-90, 0, 0)) as GameObject;
+		Destroy(go, 1.5f);
 	}
 
 	void LockOnTarget()
