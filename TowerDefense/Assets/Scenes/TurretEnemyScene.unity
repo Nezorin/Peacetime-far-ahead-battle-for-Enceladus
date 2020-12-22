@@ -1598,7 +1598,9 @@ MonoBehaviour:
   turarray: []
   highlightColor: {r: 0, g: 0, b: 0, a: 0}
   defaultColor: {r: 0, g: 0, b: 0, a: 0}
-  buildbprefab: {fileID: 438858459446147661, guid: 86e178205624e9d44bcfb2acf51c42bf,
+  buildbprefab: {fileID: 4772216676583258731, guid: 598579914e8ed5b438c94e2e1e4576c1,
+    type: 3}
+  Backprefab: {fileID: 438858459446147661, guid: 86e178205624e9d44bcfb2acf51c42bf,
     type: 3}
   defencebprefab: {fileID: 8517627814942551609, guid: 87e5fc21819985f4ca795923fa2606e8,
     type: 3}
